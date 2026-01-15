@@ -290,7 +290,7 @@ function startPolling() {
             if (needsUpdate) {
                 renderMessages(messages);
                 // Only mark as read if it is actually unread? 
-                // We rely on backend to handle "read" logic safely.
+                // relying on backend to handle "read" logic safely.
                 markAsRead();
             }
         }
