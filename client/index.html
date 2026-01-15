@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Chat App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <!-- User Selection -->
+        <div id="user-selection">
+            <label for="user-select">Logged in as:</label>
+            <select id="user-select">
+                <option value="" disabled selected>Select User...</option>
+            </select>
+        </div>
+
+        <div id="main-container">
+            <!-- Sidebar: Conversation List -->
+            <div id="sidebar">
+                <h3>Conversations</h3>
+                <div id="conversation-list"></div>
+                <button id="new-conversation-btn" style="display:none;">+ New</button>
+            </div>
+
+            <!-- Chat Window -->
+            <div id="chat-window">
+                <div id="chat-header">
+                    <span id="chat-title">Select a conversation</span>
+                    <button id="close-chat-btn"
+                        style="display:none; padding: 5px 10px; font-size: 0.8em; background: #dc3545;">Close</button>
+                </div>
+                <div id="messages-container"></div>
+                <div id="input-area">
+                    <input type="text" id="message-input" placeholder="Select a conversation to start chatting..."
+                        disabled>
+                    <button id="send-btn" disabled>Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
