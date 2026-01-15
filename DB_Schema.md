@@ -46,7 +46,7 @@ Links users to conversations and tracks their **read cursor**.
 CREATE TABLE participants (
     conversation_id INTEGER,
     user_id INTEGER,
-    last_read_message_id INTEGER DEFAULT 0, -- The "Watermark" Pointer
+    last_read_message_id INTEGER DEFAULT 0, -- The "Cursor" Pointer
     last_read_at DATETIME,
     PRIMARY KEY (conversation_id, user_id),
     FOREIGN KEY(conversation_id) REFERENCES conversations(id),
