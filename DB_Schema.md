@@ -25,7 +25,7 @@ CREATE TABLE conversations (
 ```
 
 ### 3. `messages`
-Stores the actual chat content and metadata.
+Stores the actual chat content.
 ```sql
 CREATE TABLE messages (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -42,12 +42,11 @@ CREATE TABLE messages (
 Links users to conversations and tracks their **read cursor**.
 - `last_read_message_id`: The ID of the last message the user has seen.
 - **Logic**: Any message with `ID > last_read_message_id` is considered **Unread**.
-
 ```sql
 CREATE TABLE participants (
     conversation_id INTEGER,
     user_id INTEGER,
-    last_read_message_id INTEGER DEFAULT 0,
+    last_read_message_id INTEGER DEFAULT 0, -- The "Watermark" Pointer
     last_read_at DATETIME,
     PRIMARY KEY (conversation_id, user_id),
     FOREIGN KEY(conversation_id) REFERENCES conversations(id),
